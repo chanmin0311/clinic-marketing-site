@@ -35,16 +35,16 @@ split — see plan.md's Structure Decision):
 
 **Purpose**: Project initialization and tooling — no feature code yet.
 
-- [ ] T001 Initialize Next.js 14+ App Router project with TypeScript at repo root: `package.json`, `tsconfig.json` (`strict: true` project-wide per Principle II), `next.config.ts` (`output: 'export'`, `images.unoptimized: true` per research.md §1)
-- [ ] T002 [P] Install and configure Tailwind CSS 3 in `tailwind.config.ts`: default breakpoints (`sm`/`md`/`lg`/`xl`, research.md §8) and the fixed restrained light palette tokens (background, ink/text, one muted accent) named for WCAG 2.1 AA contrast checking later (research.md §9)
-- [ ] T003 [P] Initialize shadcn/ui CLI and add the Accordion primitive and the navigation-menu/dialog primitive it needs for a mobile sheet, into `components/ui/` (plan.md dependency list — pulls in `@radix-ui/react-accordion`, `@radix-ui/react-navigation-menu` or `react-dialog`, `clsx`, `tailwind-merge`, `class-variance-authority`)
-- [ ] T004 [P] Configure ESLint (`eslint-config-next` + `eslint-plugin-jsx-a11y`) and Prettier at repo root, wired as the lint-time a11y/formatting gate (Principle V)
-- [ ] T005 [P] Configure Vitest in `vitest.config.ts` + `@vitejs/plugin-react`, with `npm run test:unit` script targeting `tests/unit/`
-- [ ] T006 [P] Configure Playwright in `playwright.config.ts` + `@playwright/test` + `@axe-core/playwright`, with `npm run test:e2e` script targeting `tests/e2e/`
-- [ ] T007 [P] Self-host Pretendard Variable via `next/font/local`: subset to Korean + Latin + punctuation glyphs actually used in the four pages' copy, woff2 only, `font-display: swap`, ≤120 KB woff2 total per page budget (research.md §2)
-- [ ] T008 [P] Create `staticwebapp.config.json` at repo root: `navigationFallback` to the generated `404.html` with `_next/*`/asset paths excluded, `globalHeaders` (`Content-Security-Policy` allow-listing `frame-src` for the Google Maps embed host, `X-Content-Type-Options: nosniff`, `Referrer-Policy: strict-origin-when-cross-origin`) (research.md §7)
-- [ ] T009 [P] Create `.github/workflows/azure-static-web-apps.yml`: gate order typecheck → lint → `test:unit` → `test:e2e` (incl. axe) → `npm audit` → Azure Static Web Apps deploy action, any red step blocking deploy (quickstart.md CI gate)
-- [ ] T010 Scaffold the layered directory structure with placeholder `.gitkeep`/index files: `domain/treatment/`, `domain/clinic-hours/`, `domain/practitioner/`, `domain/site-config/`, `infrastructure/content/`, `infrastructure/kakao/`, `infrastructure/maps/`, `components/layout/`, `components/treatments/`, `components/practitioners/`, `components/location/`, `components/shared/`, `tests/unit/domain/`, `tests/e2e/`
+- [x] T001 Initialize Next.js 14+ App Router project with TypeScript at repo root: `package.json`, `tsconfig.json` (`strict: true` project-wide per Principle II), `next.config.ts` (`output: 'export'`, `images.unoptimized: true` per research.md §1)
+- [x] T002 [P] Install and configure Tailwind CSS 4: default breakpoints (`sm`/`md`/`lg`/`xl`, research.md §8) and the fixed restrained light palette tokens (background, ink/text, one muted accent) named for WCAG 2.1 AA contrast checking later (research.md §9)
+- [x] T003 [P] Initialize shadcn/ui CLI and add the Accordion primitive and the navigation-menu/dialog primitive it needs for a mobile sheet, into `components/ui/` (plan.md dependency list — pulls in `@radix-ui/react-accordion`, `@radix-ui/react-navigation-menu` or `react-dialog`, `clsx`, `tailwind-merge`, `class-variance-authority`)
+- [x] T004 [P] Configure ESLint (`eslint-config-next` + `eslint-plugin-jsx-a11y`) and Prettier at repo root, wired as the lint-time a11y/formatting gate (Principle V)
+- [x] T005 [P] Configure Vitest in `vitest.config.ts` + `@vitejs/plugin-react`, with `npm run test:unit` script targeting `tests/unit/`
+- [x] T006 [P] Configure Playwright in `playwright.config.ts` + `@playwright/test` + `@axe-core/playwright`, with `npm run test:e2e` script targeting `tests/e2e/`
+- [x] T007 [P] Self-host Pretendard Variable via `next/font/local`: subset to Korean + Latin + punctuation glyphs actually used in the four pages' copy, woff2 only, `font-display: swap`, ≤120 KB woff2 total per page budget (research.md §2)
+- [x] T008 [P] Create `staticwebapp.config.json` at repo root: `navigationFallback` to the generated `404.html` with `_next/*`/asset paths excluded, `globalHeaders` (`Content-Security-Policy` allow-listing `frame-src` for the Google Maps embed host, `X-Content-Type-Options: nosniff`, `Referrer-Policy: strict-origin-when-cross-origin`) (research.md §7)
+- [x] T009 [P] Create `.github/workflows/azure-static-web-apps.yml`: gate order typecheck → lint → `test:unit` → `test:e2e` (incl. axe) → `npm audit` → Azure Static Web Apps deploy action, any red step blocking deploy (quickstart.md CI gate)
+- [x] T010 Scaffold the layered directory structure with placeholder `.gitkeep`/index files: `domain/treatment/`, `domain/clinic-hours/`, `domain/practitioner/`, `domain/site-config/`, `infrastructure/content/`, `infrastructure/kakao/`, `infrastructure/maps/`, `components/layout/`, `components/treatments/`, `components/practitioners/`, `components/location/`, `components/shared/`, `tests/unit/domain/`, `tests/e2e/`
 
 ---
 
@@ -213,9 +213,9 @@ clinic.
 - **Setup (Phase 1)**: No dependencies — start immediately.
 - **Foundational (Phase 2)**: Depends on Setup completion — BLOCKS all user stories.
 - **User Stories (Phase 3–6)**: All depend on Foundational completion.
-  - US1, US2, US3 are equal priority (P1) and have no dependencies on each other — can
-    proceed in parallel if staffed, or in spec order (US1 → US2 → US3).
-  - US4 (P2) depends only on Foundational, not on US1–US3, but is lower priority.
+    - US1, US2, US3 are equal priority (P1) and have no dependencies on each other — can
+      proceed in parallel if staffed, or in spec order (US1 → US2 → US3).
+    - US4 (P2) depends only on Foundational, not on US1–US3, but is lower priority.
 - **Polish (Phase 7)**: Depends on all four user stories being complete (T062's axe scan
   needs every route's final content).
 
@@ -284,7 +284,7 @@ Task: "Create domain/site-config/types.ts"
 3. Complete Phase 3: User Story 1
 4. **STOP and VALIDATE**: Treatments page independently — SC-001 flow, mobile viewport,
    grouped categories, multi-variant disclosure
-5. Note: a stakeholder demo of the *booking* goal specifically also wants US2 (the
+5. Note: a stakeholder demo of the _booking_ goal specifically also wants US2 (the
    KakaoTalk CTA) — both are P1, so a two-story MVP (US1 + US2) is a reasonable
    alternative cut if the demo's point is proving the conversion path, not just the
    catalogue.

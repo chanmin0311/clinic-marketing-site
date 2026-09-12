@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default function PractitionersPage() {
   return (
     <main className="flex-1 px-4 py-16 sm:px-6 lg:px-8">
-      <h1 className="text-2xl font-semibold leading-snug tracking-tight break-keep md:text-3xl">
+      <h1 className="text-2xl leading-snug font-semibold tracking-tight break-keep md:text-3xl">
         원장 소개
       </h1>
     </main>

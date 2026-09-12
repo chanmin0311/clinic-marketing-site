@@ -1,7 +1,12 @@
 {
   "navigationFallback": {
     "rewrite": "/404.html",
-    "exclude": ["/_next/*", "/images/*", "/fonts/*", "*.{svg,png,jpg,jpeg,webp,avif,ico,txt,xml,json}"]
+    "exclude": [
+      "/_next/*",
+      "/images/*",
+      "/fonts/*",
+      "*.{svg,png,jpg,jpeg,webp,avif,ico,txt,xml,json}"
+    ]
   },
   "globalHeaders": {
     "Content-Security-Policy": "default-src 'self'; frame-src https://www.google.com; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'",

@@ -1,0 +1,17 @@
+node_modules
+.next
+out
+coverage
+*.tsbuildinfo
+next-env.d.ts
+public/fonts
+
+# Governance/spec docs and tooling config are hand-formatted; not lint/format targets.
+.claude/
+.specify/
+specs/
+contexts/
+CLAUDE.md
+AGENTS.md
+README.md
+public/images/CREDITS.md
