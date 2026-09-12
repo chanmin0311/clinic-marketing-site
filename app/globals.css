@@ -1,0 +1,88 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+:root {
+  /* Ground */
+  --background: oklch(0.985 0.005 85); /* warm off-white */
+  --foreground: oklch(0.27 0.015 265); /* soft deep charcoal */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.27 0.015 265);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.27 0.015 265);
+
+  /* Primary: muted rose. Carries white text — verified 6.81:1. */
+  --primary: oklch(0.48 0.13 15);
+  --primary-foreground: oklch(0.99 0 0);
+
+  /* Secondary: soft sage surface */
+  --secondary: oklch(0.95 0.015 155);
+  --secondary-foreground: oklch(0.36 0.04 155);
+
+  /* Muted & accent surfaces */
+  --muted: oklch(0.955 0.008 85);
+  --muted-foreground: oklch(0.5 0.015 265); /* verified 5.75:1 on background */
+  --accent: oklch(0.96 0.02 40);
+  --accent-foreground: oklch(0.45 0.12 15);
+
+  --destructive: oklch(0.55 0.18 27);
+  --destructive-foreground: oklch(0.99 0 0);
+
+  --border: oklch(0.92 0.008 85);
+  --input: oklch(0.92 0.008 85);
+  --ring: oklch(0.48 0.13 15);
+
+  /* Brand tints — the only custom tokens. Surfaces, never text. */
+  --blush: oklch(0.965 0.018 15);
+  --sage: oklch(0.72 0.05 155);
+
+  --radius: 0.75rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-blush: var(--blush);
+  --color-sage: var(--sage);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
