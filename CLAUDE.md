@@ -7,7 +7,8 @@
 
 ## Read additionally, by type of work
 
-- UI / styling → `contexts/frontend.md`
+- Main structure of frontend → `contexts/frontend.md`
+- Desgin rules/style & philosophy -> `contexts/design.md`
 - New module, file placement, or any architectural judgement → `contexts/architecture.md`
 - Writing or changing tests → `contexts/testing.md`
 
