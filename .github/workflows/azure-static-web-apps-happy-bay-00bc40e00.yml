@@ -84,10 +84,10 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: upload
           app_location: /
-          api_location: ''
+          api_location: ""
           output_location: out
         env:
-          IS_STATIC_EXPORT: true   # tells Oryx to treat this as a Next.js static export
+          IS_STATIC_EXPORT: true # tells Oryx to treat this as a Next.js static export
 
   # ── 4. Close PR preview ─────────────────────────────────────────────────────
   # Cleans up the SWA staging environment when a PR is closed/merged.
