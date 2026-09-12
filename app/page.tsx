@@ -2,10 +2,10 @@ export default function Home() {
   return (
     <main className="flex flex-1 flex-col items-center justify-center px-4 py-16 text-center sm:px-6 lg:px-8">
       <h1 className="max-w-2xl text-2xl leading-snug font-semibold tracking-tight break-keep md:text-3xl">
-        포트폴리오 데모 사이트 준비 중입니다
+        봄빛 피부과의원
       </h1>
       <p className="text-muted-foreground mt-4 max-w-2xl text-base leading-relaxed tracking-tight break-keep md:text-lg">
-        실제 병원이 아닌 개발자 포트폴리오 목적의 가상 콘텐츠입니다.
+        과한 설명 없이, 피부 본래의 결과 상태를 돌보는 데 집중합니다.
       </p>
     </main>
   );
